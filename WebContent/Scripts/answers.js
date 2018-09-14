@@ -3,7 +3,6 @@ $(document).ready(function () {
 
     // Api
     var apiPath = "http://localhost:8080/SOSquestion/api";
-    //Form Login
     var username;
     var apiKey;
     var selectedQuestion;
@@ -20,13 +19,12 @@ $(document).ready(function () {
     var description;
     var answerSearchChange;
     var answerDelete;
-    var 
 
 
     apiKey = sessionStorage.getItem("apiKey");
     
     var content;
-    //Get questionID from input
+    //Get a specific question
     $("#Question").empty();
     selectedQuestion = sessionStorage.getItem("questionID");
     
@@ -46,7 +44,7 @@ $(document).ready(function () {
     })
 
 
-    // Get all answers
+    // Get all answers from question
     $("#btnAnswer").click(function () {
         
         username = sessionStorage.getItem("username");
@@ -75,7 +73,7 @@ $(document).ready(function () {
 
                 }
                 for(var t=0; t<answers.length; t++){
-                	//Get Specific Question
+                	//Edit a specific answer
                     $("#editA" + t).click(function(){
                         apiKey = sessionStorage.getItem("apiKey");
                         
@@ -85,6 +83,7 @@ $(document).ready(function () {
                         window.open("./createAnswers.html","_self");
                     });
                     
+                  //delete a specific answer
                     $("#deleteA" + t).click(function(){
                     	username = sessionStorage.getItem("username");
                         apiKey = sessionStorage.getItem("apiKey");
@@ -111,6 +110,7 @@ $(document).ready(function () {
         })
     });
 
+    /*
     //Get answer
     $("#btnGetAnswer").click(function () {
         selectedQuestion = $("#selectQuestion").val();
@@ -118,7 +118,7 @@ $(document).ready(function () {
         apiKey = sessionStorage.getItem("apiKey");
         var done;
         var content;
-        answerSearch = $("#txtAchievementIDSearch").val();
+        answerSearch = $("#txtAnswertIDSearch").val();
         var url = apiPath + "/questions/" + selectedQuestion + "/answers/" + answerSearch + "?apiKey=" + apiKey
         $.ajax({
             url: url,
@@ -128,11 +128,11 @@ $(document).ready(function () {
                 //return object type answer
                 answerData = data;
                 content += "<tr><td>" + answerData.answerID + "</td>" + "<td>" + answerData.questionID + "</td>" + "<td>" + answerData.author + "</td>" + "<td>" + answerData.date + "</td>" + "<td>" + answerData.description + "</td>" + "</tr>";
-                $("#tbodyAchievement").html(content);
+                $("#Answer").html(content);
             } 
             
         })
-    });
+    });*/
 
     //Create answer
     $("#btnCreateAnswer").click(function () {
@@ -174,15 +174,15 @@ console.log(selectedQuestion);
     // Change answer 
     $("#btnEditAnswer").click(function () {
         
-        username = sessionStorage.getItem("username");
+       // username = sessionStorage.getItem("username");
         apiKey = sessionStorage.getItem("apiKey");
 
         answerSearchChange = sessionStorage.getItem("answerID");
         console.log(selectedQuestion,answerSearchChange)
-        author = $("#txtAnswerDescription").val();
+        author = sessionStorage.getItem("username");
         var d = new Date();
         date = d.getFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
-        description = $("#txtAchievementDescriptionChange").val();
+        description = $("#txtAnswerDescription").val();
 
         var form_data = {
             author: author,
@@ -197,28 +197,6 @@ console.log(selectedQuestion);
             data: form_data,
             success: function (data) {
                 console.log("changed")
-            }
-        })
-    });
-
-    //Delete  
-    $("#btnDeleteAchievement").click(function () {
-        username = sessionStorage.getItem("username");
-        apiKey = sessionStorage.getItem("apiKey");
-
-        answerDelete = $("#selectAch").val();
-        var form_data = {
-            
-            apiKey: apiKey
-        }
-        var url = apiPath + "/questions/" + selectedQuestion + "/answers/" + answerDelete + "?apiKey=" + apiKey;
-        $.ajax({
-            url: url,
-            type: "DELETE",
-            data: form_data,
-            success: function (data) {
-                console.log(data);
-
             }
         })
     });

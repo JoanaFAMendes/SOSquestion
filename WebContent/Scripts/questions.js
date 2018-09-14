@@ -22,8 +22,7 @@ $(document).ready(function () {
 
 
 
-            // Get all questions
-        //    $("#btnGetApps").click(function () {
+            // Get all questions by subject
                 apiKey = sessionStorage.getItem("apiKey");
                 subjectID = sessionStorage.getItem("subjectID");
                 console.log(subjectID);
@@ -65,8 +64,6 @@ $(document).ready(function () {
                         }
                     }
                 })
-           // });
-
             
 
              
@@ -132,6 +129,7 @@ $(document).ready(function () {
                 })
             });
             
+            /*
             //edit question
             $("#edit").click(function(){
             	username = sessionStorage.getItem("username");
@@ -159,6 +157,6 @@ $(document).ready(function () {
                     });
                 });
 
-
+*/
 
             });

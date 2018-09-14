@@ -2,22 +2,17 @@ $(document).ready(function () {
 
     // Api
     var apiPath = "http://localhost:8080/SOSquestion/api";
-    //Form Login
     var username;
     var apiKey;
 
-    //Apps
-    //Gets
+    //Users
     var users = [{}];
     var userSearch;
     var userData;
-    //Create
     var userID;
     var password;
     var email;
-    //Change
     var userSearchChange;
-    //Delete
     var userDelete;
 
 
@@ -67,24 +62,6 @@ $(document).ready(function () {
             }
         })
     });
-
-    // //Get User
-    // $("#btnGetUser").click(function () {
-    //     username = sessionStorage.getItem("username");
-    //     apiKey = sessionStorage.getItem("apiKey");
-    //     //Get userID from input
-    //     userSearch = $("#txtUserIDSearch").val();
-    //     var url = apiPath + "/users/" + userSearch + "/?apiKey=" + apiKey
-    //     $.ajax({
-    //         url: url,
-    //         type: "GET",
-    //         success: function (data) {
-    //             console.log(data);
-    //             //return object type App
-    //             userData = data;
-    //         }
-    //     })
-    // });
 
     //Create User
     $("#btnCreateUser").click(function () {

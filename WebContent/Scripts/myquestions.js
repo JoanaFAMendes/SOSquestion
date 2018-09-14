@@ -22,7 +22,7 @@ $(document).ready(function () {
 
 
 
-            // Get all questions
+            // Get all questions by user
                 apiKey = sessionStorage.getItem("apiKey");
                 userID = sessionStorage.getItem("username");
                 var url = apiPath + "/questions/user/" + userID + "?apiKey=" + apiKey;
@@ -90,7 +90,7 @@ $(document).ready(function () {
                     }
                 })
 
-            
+            /*
 
              //Get Specific Question
                 $("#viewQ").click(function(){
@@ -100,7 +100,7 @@ $(document).ready(function () {
                     
                     sessionStorage.setItem("questionID", questionID);
                     window.open("./createQuestion.html","_self");
-                });
+                });*/
 
              // Change question
             $("#btnEditQuestion").click(function () {
@@ -131,6 +131,7 @@ $(document).ready(function () {
                 })
             });
             
+                /*
             //edit question
             $("#editQ").click(function(){
             	author = sessionStorage.getItem("username");
@@ -159,5 +160,5 @@ $(document).ready(function () {
                 });
 
 
-
+*/
             });
