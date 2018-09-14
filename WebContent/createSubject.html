@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/mystyle.css">
+<script src="./Scripts/subjects.js"></script>
+<script src="./Scripts/authentication.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+<nav class="navbar navbar-inverse">
+  <ul class="nav navbar-nav">
+    <li><a href="home.html">Home</a></li>
+    <li class="active"><a href="./createSubject.html">Subjects</a></li>
+    <li><a href="./createQuestion.html">Questions</a></li>
+    <li><a href="./myQuestions.html">My Questions</a></li>
+    <li><a href="./user.html">Profile</a></li>
+    <li id="btnLogout"><a>Logout</a></li>
+  </ul>
+</nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header" data-background-color="dark-green">
+                                    <h4 class="title">Create New Subject</h4>
+                                </div>
+                                <div class="card-content">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Description</label>
+                                                    <input id="txtSubDescription" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button id="btnCreateSub" type="submit" class="btn btn-sm btn-success pull-left">Create Subject</button>
+                                        <div class="clearfix"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+		</div>
+
+</body>
+</html>

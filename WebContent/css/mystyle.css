@@ -1,0 +1,39 @@
+@charset "ISO-8859-1";
+
+.signup-page{
+	background-image: url('./img/background.jpg');
+	background-size: cover; 
+	background-position: top center;
+}
+
+#title{
+	color: white !important;
+}
+
+#btnCancel{
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color: black;
+}
+
+.form{
+	background-color: white;
+}
+
+#wall{
+	padding: 16px;
+}
+
+.input-group-addon{
+	border-style: none;
+	background-color: Transparent;
+}
+
+#viewS{
+	padding: 8px;
+	border: 1px black;
+}
